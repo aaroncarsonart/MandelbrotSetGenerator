@@ -117,12 +117,11 @@ public class CustomGraphicsPanel extends JPanel {
                 if (inMandelbrotSet) {
                     pixels[index] = 0x000000;
                 } else {
-                    float z = (float) (zx + zy);
+                    float z = (float) (zx + zy); // causes checkerboard pattern
                     float iterationRatio = (i / (float) maxIterations);
-                    float iterationRatioBoom = iterationRatio * 500 % 1;
-                    float hue = iterationRatio;//0.2f;
-                    float saturation = iterationRatioBoom * z % 1;
-                    float brightness = iterationRatioBoom;
+                    float hue = 0.5f;
+                    float saturation = 0.75f;
+                    float brightness = iterationRatio * 16 % 1;  // * 500 % 1 causes wavey effect
                     pixels[index] = Color.HSBtoRGB(hue, saturation, brightness);
                 }
             }

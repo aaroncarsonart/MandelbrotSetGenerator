@@ -7,7 +7,7 @@ public class Main {
         for (double y = -2.0; y <= 2.0; y += 0.05) {
             for (double x = -2.0; x <= 2.0; x += 0.05) {
                 ComplexNumber c = new ComplexNumber(x, y);
-                ComplexNumber zn = MandelbrotSet.iterate(c, 100);
+                ComplexNumber zn = MandelbrotSet.iterate(c, 1000);
                 if (MandelbrotSet.contains(zn)) {
                     System.out.print("# ");
                 } else {
